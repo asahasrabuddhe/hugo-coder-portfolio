@@ -25,12 +25,12 @@ build-ltr:
 build-rtl:
 	$(call build_less,$(LESS_RTL_FILE),$(CSS_RTL_FILE))
 
-demo: build
-	mkdir -p demo/themes/coder-portfolio
-	rsync -av exampleSite/* demo
-	rsync -av --exclude='demo' --exclude='exampleSite' --exclude='.git' . demo/themes/coder-portfolio
-	cd demo && hugo serve -D
+ajitem: build
+	mkdir -p ajitem/themes/coder-portfolio
+	rsync -av exampleSite/* ajitem
+	rsync -av --exclude='ajitem' --exclude='exampleSite' --exclude='.git' . ajitem/themes/coder-portfolio
+	cd ajitem && hugo serve -D
 
 clean:
 	rm -f $(CSS_DIR)/*.css
-	rm -rf demo
+	rm -rf ajitem
